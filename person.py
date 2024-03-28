@@ -21,6 +21,16 @@ class Person(Model):
 
         row=self.cur.fetchall()
         return row
+    def getallparjob(self):
+        self.cur.execute("select stuff.id, stuff.name as name, (select count(distinct moussaillons.person_id) from moussaillons where moussaillons.event_id in (select event.id from event where event.stuff_id = stuff.id)) as nombre from stuff")
+
+        row=self.cur.fetchall()
+        return row
+    def getallparpays(self):
+        self.cur.execute("select country.*,count(person.id) as nombre from country left join person on person.country_id = country.id group by country.id")
+
+        row=self.cur.fetchall()
+        return row
     def getallbyname(self,hey):
         self.cur.execute("select person.*,pays.code from person left join country pays on pays.id = person.country_id where lower(person.name) like ?",(("%"+hey.replace(" ","%").lower()+"%"),))
 

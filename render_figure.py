@@ -67,7 +67,7 @@ class RenderFigure():
                   loc[n]=self.params[n]
               print(k[0])
               l=exec("myvalue="+k[0], globals(), loc)
-              mystr+=str(loc["myvalue"]) if loc["myvalue"] is not None else ""
+              #mystr+=str(loc["myvalue"]) if loc["myvalue"] is not None else ""
               if k[1]:
                 mystr+=k[1]
           #if self.mytemplate is not None:

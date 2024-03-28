@@ -40,10 +40,10 @@ $(function(){
                 var my_date_to=Date.parse(Date.parse(date_to.value)).toDateString();
 		var todaystr=today.toISOString().split("T")[0]
 		var yesterdaystr=yesterday.toISOString().split("T")[0]
-		if (my_date_from === "today")){
+		if (my_date_from === "today"){
 		date_from.value=todaystr;
 		date_to.value=todaystr;
-	}else if (my_date_from === "today")){
+	}else if (my_date_from === "today"){
 		date_from.value=yesterdaystr;
 		date_to.value=yesterdaystr;
 

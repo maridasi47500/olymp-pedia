@@ -6,6 +6,7 @@ from myrecording import Myrecording
 from place import Place
 from person import Person
 from country import Country
+from event import Event
 from periode import Periode
 from stuff import Stuff
 from group_stuff import Group_stuff
@@ -31,6 +32,7 @@ class Route():
         self.dbRumeur=Gossip()
         self.dbLieu=Place()
         self.dbStuff=Stuff()
+        self.dbEvent=Event()
         self.dbGroupStuff=Group_stuff()
         self.dbPeriode=Periode()
         self.dbPersonne=Person()
@@ -167,7 +169,7 @@ class Route():
     def nouveaustuff(self,search):
         myparam=self.get_post_data()(params=("name","group_stuff_id"))
         self.render_figure.set_param("redirect","/")
-        x=self.dbGroupStuff.create(myparam)
+        x=self.dbStuff.create(myparam)
         if x:
           self.set_notice("votre stuff a été ajoutée")
         else:
@@ -234,6 +236,13 @@ class Route():
         except:
           self.Program.set_code422(True);
           return self.render_some_json("ajouter/lieu1.json")
+    def voirevenement(self,params={}):
+        getparams=("id",)
+        print("get param, action see my new",getparams)
+        myparam=self.get_this_route_param(getparams,params)
+        personn1=self.dbEvent.getbyid(myparam["id"])
+        self.render_figure.set_param("event",self.dbEvent.getbyid(myparam["id"]))
+        return self.render_figure.render_figure("ajouter/voirevent.html")
     def voirpersonne(self,params={}):
         getparams=("id",)
         print("get param, action see my new",getparams)
@@ -279,6 +288,10 @@ class Route():
 
         self.render_figure.set_param("group_stuff",self.dbGroupStuff.getall())
         return self.render_figure.render_figure("ajouter/stuff.html")
+    def comptermoussaillons(self,search):
+        self.render_figure.set_param("parpays",self.dbPersonne.getallparpays())
+        self.render_figure.set_param("parjob",self.dbPersonne.getallparjob())
+        return self.render_figure.render_figure("ajouter/comptermoussaillons.html")
     def ajoutergroupstuff(self,search):
 
         return self.render_figure.render_figure("ajouter/group_stuff.html")
@@ -382,16 +395,19 @@ class Route():
             print("link route ",path)
             ROUTES={
             "^/moussaillon/([0-9]+).json$":self.voirmoussaillon,
+            "^/event/([0-9]+)$":self.voirevenement,
             "^/personne/([0-9]+)$":self.voirpersonne,
             "^/lieu/([0-9]+)$":self.voirlieu,
             '^/nouvelevent$': self.nouvelevent,
+            '^/comptermoussaillons$': self.comptermoussaillons,
             '^/ajouterevent$': self.ajouterevent,
             '^/nouveaustuff$': self.nouveaustuff,
             '^/ajouterstuff$': self.ajouterstuff,
             '^/nouveaugroupstuff$': self.nouveaugroupstuff,
             '^/ajoutergroupstuff$': self.ajoutergroupstuff,
-            '^/nouvelleperiode$': self.nouvelleperiode,
+
             '^/getmoussaillon$': self.getmoussaillon,
+            '^/nouvelleperiode$': self.nouvelleperiode,
             '^/ajouterperiode$': self.ajouterperiode,
             '^/nouvellepersonne$': self.nouvellepersonne,
             '^/ajouterpersonne$': self.ajouterpersonne,

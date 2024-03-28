@@ -1,0 +1,4 @@
+<%event=params["event"]%>
+<%people=event["people"]%>
+<h1><%=event["name"]%></h1>
+<%=render_collection(collection=people, partial='welcome/_people.html', as_='user')%>

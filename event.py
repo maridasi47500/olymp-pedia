@@ -2,7 +2,7 @@
 import sqlite3
 import sys
 import re
-from moussaillons import Moussaillon
+from moussaillons import Moussaillons
 from model import Model
 class Event(Model):
     def __init__(self):
@@ -29,7 +29,6 @@ class Event(Model):
         row=self.cur.fetchall()
         return row
     def deletebyid(self,myid):
-
         self.cur.execute("delete from event where id = ?",(myid,))
         job=self.cur.fetchall()
         self.con.commit()
@@ -37,29 +36,25 @@ class Event(Model):
     def getbyid(self,myid):
         self.cur.execute("select * from event where id = ?",(myid,))
         row=dict(self.cur.fetchone())
-        print(row["id"], "row id")
-        job=self.cur.fetchall()
+        self.cur.execute("select person.* from person left join moussaillons m on m.person_id = person.id group by m.person_id having m.event_id = ?",(myid,))
+        hey=self.cur.fetchall()
+        row["people"]=hey
         return row
     def create(self,params):
         print("ok")
         myhash={}
+        self.someparams=["name","stuff_id","periode_id"]
         for x in params:
-            if 'confirmation' in x:
-                continue
-            if 'envoyer' in x:
-                continue
-            if '[' not in x and x not in ['routeparams']:
+            if x in self.someparams:
                 #print("my params",x,params[x])
                 try:
                   myhash[x]=str(params[x].decode())
                 except:
                   myhash[x]=str(params[x])
         print("M Y H A S H")
-        moussaillonids=myhash["person_ids"]
+        moussaillonids=params["person_ids"]
 
         
-        del myhash["person_ids"]
-        print(myhash,myhash.keys())
         myid=None
         try:
           self.cur.execute("insert into event (name,stuff_id,periode_id) values (:name,:stuff_id,:periode_id)",myhash)

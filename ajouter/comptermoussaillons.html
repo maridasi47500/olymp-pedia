@@ -1,0 +1,8 @@
+<h1>par pays</h1>
+<table>
+
+<%=render_collection(collection=params['parpays'], partial='welcome/_parpays.html', as_='users')%>
+</table>
+
+<h1>par job</h1>
+<%=render_collection(collection=params['parjob'], partial='welcome/_parjob.html', as_='users')%>
