@@ -1,0 +1,19 @@
+<h1>ajouter des evenements
+</h1>
+<form action="/nouvellemyrelation" method="post">
+<div class="field">
+<label for="relation_relation1_id">quand quelqu'un est la/le .. de qqun</label>
+<select id="relation_relation1_id" name="relation1_id">
+<%=render_collection(collection=params['relation'], partial='welcome/_group_stuff.html', as_='stuff')%>
+</select>
+</div>
+<div class="field">
+<label for="relation_relation2_id">l'autre est la/le .. de l'autre</label>
+<select id="relation_relation2_id" name="relation2_id">
+<%=render_collection(collection=params['relation'], partial='welcome/_group_stuff.html', as_='stuff')%>
+</select>
+</div>
+<div class="actions">
+<input type="submit" value="ajouter ma relation"/>
+</div>
+</form>

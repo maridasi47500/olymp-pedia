@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Olympedia – Search family relations</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZoZCTHBQUItyinq8Wc1EsbJmAvjfm2xg+Qj6kQyvBQgUnDmi+zz2T50qpN+kc296CUVrGsT0/zA9g35VI45qhw==" />
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='EN' http-equiv='content-language'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link rel="stylesheet" media="all" href="/assets/bootstrap.min-460a43de22fd9534d595e5aea2715cb154560291c9c6401b526e31c86a5ce32d.css" />
+<link rel="stylesheet" media="all" href="/assets/bootstrap-sortable-363d232309d54b549fa85446295ef2b5d290e3f8a49f1a646247340be3705ef9.css" />
+<link rel="stylesheet" media="all" href="/assets/jquery-ui-1.11.4.min-359ba1b9eb679ad05fb4c8fda710ee4c0239354f1ba635200b6065638295d646.css" />
+<link rel="stylesheet" media="screen" href="/assets/lightbox-e29689e123fc27505d2b9d919f43ffcb6fade539cb4670f21c35aa07848105e7.css" />
+<link rel="stylesheet" media="all" href="/assets/application-75daf77198b7690f7cde28fd6c27af585a3c56fce31d228d58e604b17a39fb93.css" data-turbolinks-track="true" />
+<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" />
+<script src="/assets/application-a456cff96952808ba7a8a32428dfd13f0e7bfb8dd9e91f121815bdfd9e6570cb.js" data-turbolinks-track="true"></script>
+<script src="/assets/jquery-1.11.2.min-cc83565074b3fa7f2283f7f4d56b90ad171ede87008448ed5d2e91c50575bed1.js"></script>
+<script src="/assets/jquery-ui-1.11.4.min-1f37fd37d8db0404488ac8f6505560e48d1364ef1c81e384ac695e143049ab0f.js"></script>
+<script src="/assets/bootstrap.min-81d6fe3a991358b79b083d075ca476712c9f11c5c890047486176bde863c499e.js"></script>
+<script src="/assets/moment-ded3cbd5de5ae075c44be4149abb630c658e8789f17ccfb162e6bb7664e8bec9.js"></script>
+<script src="/assets/bootstrap-sortable-cd614fbc8d2030bc050ce63652169ed36d970209a94062fa218c631f2c04dc9f.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+
+</head>
+
+<body>
+<div class='navbar navbar-default navbar-fixed-top' role='navigation'>
+<div class='navbar-header'>
+<div class='button navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'>
+<span class='icon-bar'>
+<span class='icon-bar'></span>
+</span>
+</span>
+</div>
+<a class='navbar-brand' href='/'>Olympedia</a>
+</div>
+<div class='collapse navbar-collapse navbar-ex1-collapse'>
+<ul class='nav navbar-nav'>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Athletes
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="/athletes/advanced_search">Advanced search</a></li>
+<li><a href="/horses">Horse search</a></li>
+<li><a href="/family_relations">Related Olympians</a></li>
+<li><a href="/counts">Counts</a></li>
+<li><a href="/athletes/doubles">Doubles</a></li>
+<li><a href="/athletes/lists">Lists</a></li>
+<li class='divider'></li>
+<li><a href="/athletes">Athletes</a></li>
+</ul>
+</li>
+
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Countries
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="/countries/head_to_head">Head-to-head</a></li>
+<li><a href="/countries/best_results">Best results</a></li>
+<li><a href="/countries/comparison">Results comparison</a></li>
+<li class='divider'></li>
+<li><a href="/countries">Countries</a></li>
+</ul>
+</li>
+
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Games
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="/editions">Games</a></li>
+<li><a href="/editions/medals">Medals</a></li>
+<li><a href="/editions/results">Results</a></li>
+<li><a href="/ceremonies">Opening ceremony</a></li>
+<li><a href="/venues/menu">Venues</a></li>
+</ul>
+</li>
+
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Sports
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="/sports">Disciplines &amp; Sports</a></li>
+<li><a href="/event_names">Events</a></li>
+</ul>
+</li>
+
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+IOC
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="/organizations">Organizations</a></li>
+<li><a href="/definitions">Definitions</a></li>
+<li><a href="/meetings">Meetings</a></li>
+<li><a href="/ioc/host_cities">Host city selection</a></li>
+</ul>
+</li>
+
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Statistics
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li></li>
+<li><a href="/statistics/medal/country">Medals by country</a></li>
+<li><a href="/statistics/medal/athlete">Medals by athlete</a></li>
+<li><a href="/statistics/medal_table">Medal tables</a></li>
+<li><a href="/statistics/participation">Participations</a></li>
+<li><a href="/records">Olympic Records</a></li>
+<li><a href="/statistics/age">Age records</a></li>
+<li><a href="/lists">Lists</a></li>
+<li><a href="/today">Today</a></li>
+<li></li>
+<li class='divider'></li>
+<li><a href="/statistics">Statistics</a></li>
+</ul>
+</li>
+
+
+
+
+<li><a href="/feedbacks/new">Feedback</a></li>
+<form class="navbar-form navbar-left" role="search" action="/athletes/quick_search" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="wH2dlTRjK3tUKIcMMQBSETJ8ntCTUAKg9uhW5W8pdYjM1IP/r6LEx0qgqUSBn896rU6AyXH3wju/1CyRr92RGQ==" />
+<div class='form-group'>
+<input type="text" name="query" id="query" class="form-control" placeholder="Athlete search" />
+</div>
+<input type="submit" name="commit" value="Go" class="btn btn-default" data-disable-with="Go" />
+</form>
+
+
+</ul>
+</div>
+</div>
+<div class='container'>
+<ol class='breadcrumb'>
+<li>
+<a href='/'>Home</a>
+</li>
+<li>Family Relations</li><li class="active">Search family relations</li>
+</ol>
+<h1>Search family relations</h1>
+<form class='form-inline' id='filter'>
+<p>
+Find Olympians who are a <select name="relationship_id" id="relationship_id" class="form-control"><option value="26">Aunt</option>
+<option value="9">Brother</option>
+<option value="36">Brother-in-law</option>
+<option value="29">Cousin</option>
+<option value="16">Daughter</option>
+<option value="39">Daughter-in-law</option>
+<option value="7">Father</option>
+<option value="34">Father-in-law</option>
+<option value="31">Grandaunt</option>
+<option value="20">Granddaughter</option>
+<option value="17">Grandfather</option>
+<option value="18">Grandmother</option>
+<option value="32">Grandnephew</option>
+<option value="33">Grandniece</option>
+<option value="19">Grandson</option>
+<option value="30">Granduncle</option>
+<option value="24">Great-granddaughter</option>
+<option value="21">Great-grandfather</option>
+<option value="22">Great-grandmother</option>
+<option value="23">Great-grandson</option>
+<option value="52">Great-great-granddaughter</option>
+<option value="50">Great-great-grandfather</option>
+<option value="51">Great-great-grandmother</option>
+<option value="53">Great-great-grandson</option>
+<option value="48">Half-brother</option>
+<option value="49">Half-sister</option>
+<option value="1">Husband</option>
+<option value="3">Husband (divorced)</option>
+<option value="5">Husband (separated)</option>
+<option value="8">Mother</option>
+<option value="35">Mother-in-law</option>
+<option value="27">Nephew</option>
+<option value="28">Niece</option>
+<option value="46">Same-sex partner</option>
+<option value="47">Same-sex partner (divorced)</option>
+<option value="10">Sister</option>
+<option value="37">Sister-in-law</option>
+<option value="15">Son</option>
+<option value="38">Son-in-law</option>
+<option value="42">Stepbrother</option>
+<option value="45">Stepdaughter</option>
+<option value="40">Stepfather</option>
+<option value="41">Stepmother</option>
+<option value="43">Stepsister</option>
+<option value="44">Stepson</option>
+<option value="54">Triplet brother</option>
+<option value="55">Triplet sister</option>
+<option value="11">Twin brother</option>
+<option value="12">Twin brother (fraternal)</option>
+<option value="13">Twin sister</option>
+<option value="14">Twin sister (fraternal)</option>
+<option value="25">Uncle</option>
+<option value="2">Wife</option>
+<option value="4">Wife (divorced)</option>
+<option value="6">Wife (separated)</option></select> of another Olympian and who were competing <select name="family_search_type" id="family_search_type" class="form-control"><option value="competing">in any Olympics</option>
+<option value="same_olympics">in the same Olympics</option>
+<option value="same_event">in the same event</option>
+<option value="same_event_and_medal">and medaling in the same event</option></select>
+</p>
+<p>
+With both for relatives:
+</p>
+<p>
+<select name="sport_id" id="sport_select" class="form-control"><option value="">For discipline</option>
+<option value="AAR">AAR - Ancient Art Competitions</option>
+<option value="AAT">AAT - Ancient Athletics</option>
+<option value="ACB">ACB - Ancient Combative Sports</option>
+<option value="AEQ">AEQ - Ancient Equestrianism</option>
+<option value="AER">AER - Aeronautics</option>
+<option value="ALP">ALP - Alpine Skiing</option>
+<option value="APN">APN - Alpinism</option>
+<option value="ARC">ARC - Archery</option>
+<option value="ARF">ARF - Australian Rules Football</option>
+<option value="ART">ART - Art Competitions</option>
+<option value="ATH">ATH - Athletics</option>
+<option value="AUT">AUT - Automobile Racing</option>
+<option value="BBL">BBL - Baseball</option>
+<option value="BDM">BDM - Badminton</option>
+<option value="BDY">BDY - Bandy</option>
+<option value="BHA">BHA - Beach Handball</option>
+<option value="BK3">BK3 - 3x3 Basketball</option>
+<option value="BKB">BKB - Basketball</option>
+<option value="BKG">BKG - Breaking</option>
+<option value="BLN">BLN - Ballooning</option>
+<option value="BMF">BMF - Cycling BMX Freestyle</option>
+<option value="BMX">BMX - Cycling BMX Racing</option>
+<option value="BOB">BOB - Bobsleigh</option>
+<option value="BOU">BOU - Boules</option>
+<option value="BOX">BOX - Boxing</option>
+<option value="BPO">BPO - Bicycle Polo</option>
+<option value="BTH">BTH - Biathlon</option>
+<option value="BWL">BWL - Bowling</option>
+<option value="CCS">CCS - Cross Country Skiing</option>
+<option value="CKT">CKT - Cricket</option>
+<option value="CLB">CLB - Sport Climbing</option>
+<option value="CMA">CMA - Canoe Marathon</option>
+<option value="CNN">CNN - Canne De Combat</option>
+<option value="CQT">CQT - Croquet</option>
+<option value="CRD">CRD - Cycling Road</option>
+<option value="CSL">CSL - Canoe Slalom</option>
+<option value="CSP">CSP - Canoe Sprint</option>
+<option value="CTR">CTR - Cycling Track</option>
+<option value="CUR">CUR - Curling</option>
+<option value="DIV">DIV - Diving</option>
+<option value="DSR">DSR - Dogsled Racing</option>
+<option value="EDR">EDR - Equestrian Dressage</option>
+<option value="EDV">EDV - Equestrian Driving</option>
+<option value="EJP">EJP - Equestrian Jumping</option>
+<option value="EVE">EVE - Equestrian Eventing</option>
+<option value="EVL">EVL - Equestrian Vaulting</option>
+<option value="FBL">FBL - Football</option>
+<option value="FEN">FEN - Fencing</option>
+<option value="FFG">FFG - Firefighting</option>
+<option value="FRS">FRS - Freestyle Skiing</option>
+<option value="FSH">FSH - Fishing</option>
+<option value="FSK">FSK - Figure Skating</option>
+<option value="FTS">FTS - Futsal</option>
+<option value="GAC">GAC - Acrobatic Gymnastics</option>
+<option value="GAR">GAR - Artistic Gymnastics</option>
+<option value="GFB">GFB - Gaelic Football</option>
+<option value="GLD">GLD - Gliding</option>
+<option value="GLF">GLF - Golf</option>
+<option value="GLM">GLM - Glíma</option>
+<option value="GRY">GRY - Rhythmic Gymnastics</option>
+<option value="GTR">GTR - Trampolining</option>
+<option value="GTS">GTS - Gotland Sports</option>
+<option value="HBL">HBL - Handball</option>
+<option value="HO5">HO5 - Hockey 5s</option>
+<option value="HOC">HOC - Hockey</option>
+<option value="HUR">HUR - Hurling</option>
+<option value="IH3">IH3 - 3-on-3 Ice Hockey</option>
+<option value="IHO">IHO - Ice Hockey</option>
+<option value="IST">IST - Ice Stock Sport</option>
+<option value="JDP">JDP - Jeu De Paume</option>
+<option value="JUD">JUD - Judo</option>
+<option value="KBL">KBL - Korfball</option>
+<option value="KEN">KEN - Kendo</option>
+<option value="KTE">KTE - Karate</option>
+<option value="KTS">KTS - Kaatsen</option>
+<option value="KYU">KYU - Kyudo</option>
+<option value="LAX">LAX - Lacrosse</option>
+<option value="LFC">LFC - Lifesaving</option>
+<option value="LPM">LPM - Longue Paume</option>
+<option value="LUG">LUG - Luge</option>
+<option value="MBO">MBO - Motorboating</option>
+<option value="MCS">MCS - Motorcycle Sports</option>
+<option value="MIX">MIX - Mixed Sports</option>
+<option value="MPN">MPN - Modern Pentathlon</option>
+<option value="MSP">MSP - Military Ski Patrol</option>
+<option value="MTB">MTB - Cycling Mountain Bike</option>
+<option value="MXC">MXC - Military Exercise</option>
+<option value="NCB">NCB - Nordic Combined</option>
+<option value="OWS">OWS - Marathon Swimming</option>
+<option value="PEL">PEL - Basque pelota</option>
+<option value="POL">POL - Polo</option>
+<option value="PSP">PSP - Pesäpallo</option>
+<option value="RGB">RGB - Rugby</option>
+<option value="RHO">RHO - Roller Hockey</option>
+<option value="ROL">ROL - Roller Skating</option>
+<option value="ROQ">ROQ - Roque</option>
+<option value="ROW">ROW - Rowing</option>
+<option value="RQT">RQT - Racquets</option>
+<option value="RU7">RU7 - Rugby Sevens</option>
+<option value="SAL">SAL - Sailing</option>
+<option value="SAV">SAV - Savate</option>
+<option value="SBD">SBD - Snowboarding</option>
+<option value="SHO">SHO - Shooting</option>
+<option value="SJP">SJP - Ski Jumping</option>
+<option value="SJR">SJR - Skijoring</option>
+<option value="SKB">SKB - Skateboarding</option>
+<option value="SKN">SKN - Skeleton</option>
+<option value="SMT">SMT - Ski Mountaineering</option>
+<option value="SOF">SOF - Softball</option>
+<option value="SPS">SPS - Speed Skiing</option>
+<option value="SQU">SQU - Squash</option>
+<option value="SRF">SRF - Surfing</option>
+<option value="SSK">SSK - Speed Skating</option>
+<option value="STK">STK - Short Track Speed Skating</option>
+<option value="SUM">SUM - Sumo</option>
+<option value="SWA">SWA - Artistic Swimming</option>
+<option value="SWM">SWM - Swimming</option>
+<option value="TEN">TEN - Tennis</option>
+<option value="TKW">TKW - Taekwondo</option>
+<option value="TOW">TOW - Tug-Of-War</option>
+<option value="TRI">TRI - Triathlon</option>
+<option value="TTE">TTE - Table Tennis</option>
+<option value="UNK">UNK - Unknown Sport</option>
+<option value="USF">USF - American Football</option>
+<option value="VBV">VBV - Beach Volleyball</option>
+<option value="VVO">VVO - Volleyball</option>
+<option value="WLF">WLF - Weightlifting</option>
+<option value="WPE">WPE - Winter Pentathlon</option>
+<option value="WPO">WPO - Water Polo</option>
+<option value="WRE">WRE - Wrestling</option>
+<option value="WSK">WSK - Waterskiing</option>
+<option value="WSU">WSU - Wushu</option></select>
+<select name="sport_group_id" id="sport_select" class="form-control"><option value="">For sport</option>
+<option value="AC">AC - Art Competitions</option>
+<option value="AF">AF - Australian Rules Football</option>
+<option value="AN">AN - Ancient Sports</option>
+<option value="AQ">AQ - Aquatics</option>
+<option value="AR">AR - Archery</option>
+<option value="AS">AS - Air Sports</option>
+<option value="AT">AT - Athletics</option>
+<option value="AU">AU - Automobile Sports</option>
+<option value="BD">BD - Badminton</option>
+<option value="BK">BK - Basketball</option>
+<option value="BO">BO - Boules</option>
+<option value="BS">BS - Bobsleigh</option>
+<option value="BT">BT - Biathlon</option>
+<option value="BW">BW - Bowling</option>
+<option value="BX">BX - Boxing</option>
+<option value="BY">BY - Bandy</option>
+<option value="CA">CA - Canoeing</option>
+<option value="CI">CI - Cricket</option>
+<option value="CL">CL - Sport Climbing</option>
+<option value="CO">CO - Croquet</option>
+<option value="CU">CU - Curling</option>
+<option value="CY">CY - Cycling</option>
+<option value="DA">DA - Dance</option>
+<option value="DS">DS - Dogsled Racing</option>
+<option value="EQ">EQ - Equestrian</option>
+<option value="FB">FB - Football</option>
+<option value="FE">FE - Fencing</option>
+<option value="FF">FF - Firefighting</option>
+<option value="FS">FS - Fishing</option>
+<option value="GL">GL - Glíma</option>
+<option value="GO">GO - Golf</option>
+<option value="GS">GS - Gaelic Sports</option>
+<option value="GT">GT - Gotland Sports</option>
+<option value="GY">GY - Gymnastics</option>
+<option value="HB">HB - Handball</option>
+<option value="HO">HO - Hockey</option>
+<option value="IH">IH - Ice Hockey</option>
+<option value="IS">IS - Ice Stock Sport</option>
+<option value="JP">JP - Jeu de Paume</option>
+<option value="JU">JU - Judo</option>
+<option value="KB">KB - Korfball</option>
+<option value="KE">KE - Kendo</option>
+<option value="KS">KS - Kaatsen</option>
+<option value="KT">KT - Karate</option>
+<option value="KY">KY - Kyudo</option>
+<option value="LG">LG - Luge</option>
+<option value="LS">LS - Lifesaving</option>
+<option value="LX">LX - Lacrosse</option>
+<option value="MB">MB - Motorboating</option>
+<option value="MC">MC - Motorcycle Sports</option>
+<option value="MP">MP - Modern Pentathlon</option>
+<option value="MT">MT - Mountaineering and Climbing</option>
+<option value="MX">MX - Military Exercise</option>
+<option value="PB">PB - Basque pelota</option>
+<option value="PO">PO - Polo</option>
+<option value="PS">PS - Pesäpallo</option>
+<option value="RC">RC - Racquets</option>
+<option value="RO">RO - Rowing</option>
+<option value="RQ">RQ - Roque</option>
+<option value="RS">RS - Roller Sports</option>
+<option value="RU">RU - Rugby</option>
+<option value="SA">SA - Sailing</option>
+<option value="SB">SB - Baseball/Softball</option>
+<option value="SF">SF - Surfing</option>
+<option value="SH">SH - Shooting</option>
+<option value="SI">SI - Skiing</option>
+<option value="SK">SK - Skating</option>
+<option value="SM">SM - Ski Mountaineering</option>
+<option value="SQ">SQ - Squash</option>
+<option value="SU">SU - Sumo</option>
+<option value="SV">SV - Savate</option>
+<option value="TE">TE - Tennis</option>
+<option value="TK">TK - Taekwondo</option>
+<option value="TR">TR - Triathlon</option>
+<option value="TT">TT - Table Tennis</option>
+<option value="TW">TW - Tug-Of-War</option>
+<option value="UF">UF - American Football</option>
+<option value="VB">VB - Volleyball</option>
+<option value="WL">WL - Weightlifting</option>
+<option value="WP">WP - Winter Pentathlon</option>
+<option value="WR">WR - Wrestling</option>
+<option value="WU">WU - Wushu</option>
+<option value="WW">WW - Waterskiing and Wakeboarding</option>
+<option value="XX">XX - Mixed Sports</option></select>
+<select name="country_id" id="country_select" class="form-control"><option value="">For NOC</option>
+<option value="AFG">AFG - Afghanistan</option>
+<option value="AGU">AGU - Anguilla</option>
+<option value="AHO">AHO - Netherlands Antilles</option>
+<option value="AIN">AIN - Individual Neutral Athletes</option>
+<option value="ALB">ALB - Albania</option>
+<option value="ALG">ALG - Algeria</option>
+<option value="AND">AND - Andorra</option>
+<option value="ANG">ANG - Angola</option>
+<option value="ANT">ANT - Antigua and Barbuda</option>
+<option value="ANZ">ANZ - Australasia</option>
+<option value="ARG">ARG - Argentina</option>
+<option value="ARM">ARM - Armenia</option>
+<option value="ARU">ARU - Aruba</option>
+<option value="ASA">ASA - American Samoa</option>
+<option value="AUS">AUS - Australia</option>
+<option value="AUT">AUT - Austria</option>
+<option value="AZE">AZE - Azerbaijan</option>
+<option value="BAH">BAH - The Bahamas</option>
+<option value="BAN">BAN - Bangladesh</option>
+<option value="BAR">BAR - Barbados</option>
+<option value="BDI">BDI - Burundi</option>
+<option value="BEL">BEL - Belgium</option>
+<option value="BEN">BEN - Benin</option>
+<option value="BER">BER - Bermuda</option>
+<option value="BHU">BHU - Bhutan</option>
+<option value="BIH">BIH - Bosnia and Herzegovina</option>
+<option value="BIZ">BIZ - Belize</option>
+<option value="BLR">BLR - Belarus</option>
+<option value="BOH">BOH - Bohemia</option>
+<option value="BOL">BOL - Bolivia</option>
+<option value="BOT">BOT - Botswana</option>
+<option value="BRA">BRA - Brazil</option>
+<option value="BRN">BRN - Bahrain</option>
+<option value="BRT">BRT - Saint-Barthélemy</option>
+<option value="BRU">BRU - Brunei Darussalam</option>
+<option value="BUL">BUL - Bulgaria</option>
+<option value="BUR">BUR - Burkina Faso</option>
+<option value="CAF">CAF - Central African Republic</option>
+<option value="CAM">CAM - Cambodia</option>
+<option value="CAN">CAN - Canada</option>
+<option value="CAY">CAY - Cayman Islands</option>
+<option value="CEA">CEA - Central America</option>
+<option value="CGO">CGO - Congo</option>
+<option value="CHA">CHA - Chad</option>
+<option value="CHI">CHI - Chile</option>
+<option value="CHN">CHN - People&#39;s Republic of China</option>
+<option value="CIV">CIV - Côte d&#39;Ivoire</option>
+<option value="CKI">CKI - Cocos Islands</option>
+<option value="CMR">CMR - Cameroon</option>
+<option value="COD">COD - Democratic Republic of the Congo</option>
+<option value="COK">COK - Cook Islands</option>
+<option value="COL">COL - Colombia</option>
+<option value="COM">COM - Comoros</option>
+<option value="COR">COR - Korea Team</option>
+<option value="CPV">CPV - Cabo Verde</option>
+<option value="CRC">CRC - Costa Rica</option>
+<option value="CRO">CRO - Croatia</option>
+<option value="CRT">CRT - Crete</option>
+<option value="CUB">CUB - Cuba</option>
+<option value="CUR">CUR - Curaçao</option>
+<option value="CYP">CYP - Cyprus</option>
+<option value="CZE">CZE - Czechia</option>
+<option value="DEN">DEN - Denmark</option>
+<option value="DJI">DJI - Djibouti</option>
+<option value="DMA">DMA - Dominica</option>
+<option value="DOM">DOM - Dominican Republic</option>
+<option value="ECU">ECU - Ecuador</option>
+<option value="EGY">EGY - Egypt</option>
+<option value="EOR">EOR - Refugee Olympic Team</option>
+<option value="ERI">ERI - Eritrea</option>
+<option value="ESA">ESA - El Salvador</option>
+<option value="ESP">ESP - Spain</option>
+<option value="EST">EST - Estonia</option>
+<option value="ETH">ETH - Ethiopia</option>
+<option value="EUN">EUN - Unified Team</option>
+<option value="FAR">FAR - Faroe Islands</option>
+<option value="FGU">FGU - French Guiana</option>
+<option value="FIJ">FIJ - Fiji</option>
+<option value="FIN">FIN - Finland</option>
+<option value="FLI">FLI - Falkland Islands</option>
+<option value="FPN">FPN - French Polynesia</option>
+<option value="FRA">FRA - France</option>
+<option value="FRG">FRG - West Germany</option>
+<option value="FSM">FSM - Federated States of Micronesia</option>
+<option value="GAB">GAB - Gabon</option>
+<option value="GAM">GAM - The Gambia</option>
+<option value="GBR">GBR - Great Britain</option>
+<option value="GBS">GBS - Guinea Bissau</option>
+<option value="GDP">GDP - Guadeloupe</option>
+<option value="GDR">GDR - East Germany</option>
+<option value="GEO">GEO - Georgia</option>
+<option value="GEQ">GEQ - Equatorial Guinea</option>
+<option value="GER">GER - Germany</option>
+<option value="GHA">GHA - Ghana</option>
+<option value="GIB">GIB - Gibraltar</option>
+<option value="GRE">GRE - Greece</option>
+<option value="GRL">GRL - Greenland</option>
+<option value="GRN">GRN - Grenada</option>
+<option value="GUA">GUA - Guatemala</option>
+<option value="GUE">GUE - Guernsey</option>
+<option value="GUI">GUI - Guinea</option>
+<option value="GUM">GUM - Guam</option>
+<option value="GUY">GUY - Guyana</option>
+<option value="HAI">HAI - Haiti</option>
+<option value="HEL">HEL - St. Helena</option>
+<option value="HKG">HKG - Hong Kong, China</option>
+<option value="HON">HON - Honduras</option>
+<option value="HUN">HUN - Hungary</option>
+<option value="IFR">IFR - International Federation Representative</option>
+<option value="INA">INA - Indonesia</option>
+<option value="IND">IND - India</option>
+<option value="IOA">IOA - Independent Olympic Athletes</option>
+<option value="IOM">IOM - Isle of Man</option>
+<option value="IRI">IRI - Islamic Republic of Iran</option>
+<option value="IRL">IRL - Ireland</option>
+<option value="IRQ">IRQ - Iraq</option>
+<option value="ISL">ISL - Iceland</option>
+<option value="ISR">ISR - Israel</option>
+<option value="ISV">ISV - United States Virgin Islands</option>
+<option value="ITA">ITA - Italy</option>
+<option value="IVB">IVB - British Virgin Islands</option>
+<option value="JAM">JAM - Jamaica</option>
+<option value="JER">JER - Jersey</option>
+<option value="JOR">JOR - Jordan</option>
+<option value="JPN">JPN - Japan</option>
+<option value="KAZ">KAZ - Kazakhstan</option>
+<option value="KEN">KEN - Kenya</option>
+<option value="KGZ">KGZ - Kyrgyzstan</option>
+<option value="KIR">KIR - Kiribati</option>
+<option value="KOR">KOR - Republic of Korea</option>
+<option value="KOS">KOS - Kosovo</option>
+<option value="KSA">KSA - Kingdom of Saudi Arabia</option>
+<option value="KUW">KUW - Kuwait</option>
+<option value="LAO">LAO - Lao People&#39;s Democratic Republic</option>
+<option value="LAT">LAT - Latvia</option>
+<option value="LBA">LBA - Libya</option>
+<option value="LBN">LBN - Lebanon</option>
+<option value="LBR">LBR - Liberia</option>
+<option value="LCA">LCA - Saint Lucia</option>
+<option value="LES">LES - Lesotho</option>
+<option value="LIE">LIE - Liechtenstein</option>
+<option value="LTU">LTU - Lithuania</option>
+<option value="LUX">LUX - Luxembourg</option>
+<option value="MAC">MAC - Macau</option>
+<option value="MAD">MAD - Madagascar</option>
+<option value="MAL">MAL - Malaya</option>
+<option value="MAR">MAR - Morocco</option>
+<option value="MAS">MAS - Malaysia</option>
+<option value="MAW">MAW - Malawi</option>
+<option value="MDA">MDA - Republic of Moldova</option>
+<option value="MDV">MDV - Maldives</option>
+<option value="MEX">MEX - Mexico</option>
+<option value="MGL">MGL - Mongolia</option>
+<option value="MHL">MHL - Marshall Islands</option>
+<option value="MIX">MIX - Mixed team</option>
+<option value="MKD">MKD - North Macedonia</option>
+<option value="MLI">MLI - Mali</option>
+<option value="MLT">MLT - Malta</option>
+<option value="MNE">MNE - Montenegro</option>
+<option value="MON">MON - Monaco</option>
+<option value="MOZ">MOZ - Mozambique</option>
+<option value="MQE">MQE - Martinique</option>
+<option value="MRI">MRI - Mauritius</option>
+<option value="MRT">MRT - Saint-Martin</option>
+<option value="MTN">MTN - Mauritania</option>
+<option value="MTS">MTS - Montserrat</option>
+<option value="MWI">MWI - Midway Islands</option>
+<option value="MYA">MYA - Myanmar</option>
+<option value="MYT">MYT - Mayotte</option>
+<option value="NAM">NAM - Namibia</option>
+<option value="NBO">NBO - North Borneo</option>
+<option value="NCA">NCA - Nicaragua</option>
+<option value="NCD">NCD - New Caledonia</option>
+<option value="NED">NED - Netherlands</option>
+<option value="NEP">NEP - Nepal</option>
+<option value="NFI">NFI - Norfolk Island</option>
+<option value="NFL">NFL - Newfoundland</option>
+<option value="NGR">NGR - Nigeria</option>
+<option value="NIG">NIG - Niger</option>
+<option value="NIU">NIU - Niue</option>
+<option value="NMI">NMI - Northern Mariana Islands</option>
+<option value="NOR">NOR - Norway</option>
+<option value="NRU">NRU - Nauru</option>
+<option value="NZL">NZL - New Zealand</option>
+<option value="OMA">OMA - Oman</option>
+<option value="PAK">PAK - Pakistan</option>
+<option value="PAN">PAN - Panama</option>
+<option value="PAR">PAR - Paraguay</option>
+<option value="PER">PER - Peru</option>
+<option value="PHI">PHI - Philippines</option>
+<option value="PLE">PLE - Palestine</option>
+<option value="PLW">PLW - Palau</option>
+<option value="PNG">PNG - Papua New Guinea</option>
+<option value="POL">POL - Poland</option>
+<option value="POR">POR - Portugal</option>
+<option value="PRK">PRK - Democratic People&#39;s Republic of Korea</option>
+<option value="PUR">PUR - Puerto Rico</option>
+<option value="QAT">QAT - Qatar</option>
+<option value="RHO">RHO - Rhodesia</option>
+<option value="RNN">RNN - La Réunion</option>
+<option value="ROC">ROC - ROC</option>
+<option value="ROU">ROU - Romania</option>
+<option value="RSA">RSA - South Africa</option>
+<option value="RUS">RUS - Russian Federation</option>
+<option value="RWA">RWA - Rwanda</option>
+<option value="SAA">SAA - Saar</option>
+<option value="SAM">SAM - Samoa</option>
+<option value="SCG">SCG - Serbia and Montenegro</option>
+<option value="SEN">SEN - Senegal</option>
+<option value="SEY">SEY - Seychelles</option>
+<option value="SGP">SGP - Singapore</option>
+<option value="SKN">SKN - Saint Kitts and Nevis</option>
+<option value="SLE">SLE - Sierra Leone</option>
+<option value="SLO">SLO - Slovenia</option>
+<option value="SMR">SMR - San Marino</option>
+<option value="SMT">SMT - Sint Maarten</option>
+<option value="SOL">SOL - Solomon Islands</option>
+<option value="SOM">SOM - Somalia</option>
+<option value="SPM">SPM - St. Pierre and Miquelon</option>
+<option value="SRB">SRB - Serbia</option>
+<option value="SRI">SRI - Sri Lanka</option>
+<option value="SSD">SSD - South Sudan</option>
+<option value="STP">STP - São Tomé and Príncipe</option>
+<option value="SUD">SUD - Sudan</option>
+<option value="SUI">SUI - Switzerland</option>
+<option value="SUR">SUR - Suriname</option>
+<option value="SVB">SVB - Svalbard</option>
+<option value="SVK">SVK - Slovakia</option>
+<option value="SWE">SWE - Sweden</option>
+<option value="SWZ">SWZ - Eswatini</option>
+<option value="SYR">SYR - Syrian Arab Republic</option>
+<option value="TAN">TAN - United Republic of Tanzania</option>
+<option value="TCH">TCH - Czechoslovakia</option>
+<option value="TGA">TGA - Tonga</option>
+<option value="THA">THA - Thailand</option>
+<option value="TJK">TJK - Tajikistan</option>
+<option value="TKL">TKL - Tokelau</option>
+<option value="TKM">TKM - Turkmenistan</option>
+<option value="TKS">TKS - Turks and Caicos Islands</option>
+<option value="TLS">TLS - Timor-Leste</option>
+<option value="TOG">TOG - Togo</option>
+<option value="TPE">TPE - Chinese Taipei</option>
+<option value="TTO">TTO - Trinidad and Tobago</option>
+<option value="TUN">TUN - Tunisia</option>
+<option value="TUR">TUR - Türkiye</option>
+<option value="TUV">TUV - Tuvalu</option>
+<option value="UAE">UAE - United Arab Emirates</option>
+<option value="UAR">UAR - United Arab Republic</option>
+<option value="UGA">UGA - Uganda</option>
+<option value="UKR">UKR - Ukraine</option>
+<option value="UNK">UNK - Unknown</option>
+<option value="URS">URS - Soviet Union</option>
+<option value="URU">URU - Uruguay</option>
+<option value="USA">USA - United States</option>
+<option value="UZB">UZB - Uzbekistan</option>
+<option value="VAN">VAN - Vanuatu</option>
+<option value="VAT">VAT - Vatican City</option>
+<option value="VEN">VEN - Venezuela</option>
+<option value="VIE">VIE - Vietnam</option>
+<option value="VIN">VIN - Saint Vincent and the Grenadines</option>
+<option value="VNM">VNM - South Vietnam</option>
+<option value="WAF">WAF - Wallis and Futuna</option>
+<option value="WIF">WIF - West Indies Federation</option>
+<option value="XMI">XMI - Christmas Island</option>
+<option value="YAR">YAR - North Yemen</option>
+<option value="YEM">YEM - Yemen</option>
+<option value="YMD">YMD - South Yemen</option>
+<option value="YUG">YUG - Yugoslavia</option>
+<option value="ZAM">ZAM - Zambia</option>
+<option value="ZIM">ZIM - Zimbabwe</option>
+<option value="AAI">AAI - Adai</option>
+<option value="ADA">ADA - Adana</option>
+<option value="ADR">ADR - Adramyttion</option>
+<option value="AGR">AGR - Aigeira</option>
+<option value="AGS">AGS - Argos</option>
+<option value="AIG">AIG - Aigion</option>
+<option value="AIT">AIT - Aitolia</option>
+<option value="AIZ">AIZ - Aizanoi</option>
+<option value="AKA">AKA - Akarnan</option>
+<option value="AKR">AKR - Akragas</option>
+<option value="ALX">ALX - Alexandria</option>
+<option value="AMB">AMB - Ambrakia</option>
+<option value="AMN">AMN - Armenia</option>
+<option value="AMP">AMP - Amphissa</option>
+<option value="ANM">ANM - Anemurium</option>
+<option value="ANS">ANS - Andros</option>
+<option value="APD">APD - Aspendos</option>
+<option value="APH">APH - Aphrodisias</option>
+<option value="APL">APL - Apollonia</option>
+<option value="APM">APM - Apamea-Myrleia</option>
+<option value="APP">APP - Amphipolis</option>
+<option value="ARK">ARK - Unknown city in Arkadia</option>
+<option value="ASI">ASI - Unknown city in Asia</option>
+<option value="ASO">ASO - Assos</option>
+<option value="ATD">ATD - Anthedon</option>
+<option value="ATH">ATH - Athens</option>
+<option value="ATI">ATI - Atiolia</option>
+<option value="ATK">ATK - Antikyra</option>
+<option value="ATO">ATO - Antiochia on the Orontes</option>
+<option value="ATP">ATP - Astypalaia</option>
+<option value="ATR">ATR - Augusta Traiana</option>
+<option value="ATS">ATS - Antissa</option>
+<option value="ATT">ATT - Attaleia</option>
+<option value="BOE">BOE - Unknown city in Boeotia</option>
+<option value="BRG">BRG - Bargylia</option>
+<option value="BRK">BRK - Barke</option>
+<option value="BTN">BTN - Bithynia (Nikaia)</option>
+<option value="BTP">BTP - Bithynia (Prousa)</option>
+<option value="DEL">DEL - Delos</option>
+<option value="DIP">DIP - Dipaia</option>
+<option value="DLD">DLD - Daldis</option>
+<option value="DLP">DLP - Delphi</option>
+<option value="DYM">DYM - Dymai</option>
+<option value="DYS">DYS - Dyspontion</option>
+<option value="EDM">EDM - Epidamnos</option>
+<option value="EDR">EDR - Epidauros</option>
+<option value="EGP">EGP - Unknown city in Egypt</option>
+<option value="ELA">ELA - Elateia</option>
+<option value="ELI">ELI - Elis</option>
+<option value="EPE">EPE - Epeiros</option>
+<option value="EPH">EPH - Ephesus</option>
+<option value="ERY">ERY - Erythrai</option>
+<option value="GEL">GEL - Gela</option>
+<option value="GOR">GOR - Gortyn</option>
+<option value="HAL">HAL - Halicarnassus</option>
+<option value="HER">HER - Heraia</option>
+<option value="HIM">HIM - Himera</option>
+<option value="HMN">HMN - Hermione</option>
+<option value="HMP">HMP - Hermopolis</option>
+<option value="HRP">HRP - Hierapolis</option>
+<option value="HYB">HYB - Hyblaia</option>
+<option value="HYP">HYP - Hypaipa</option>
+<option value="IAS">IAS - Iasos</option>
+<option value="KAR">KAR - Karian</option>
+<option value="KEL">KEL - Kelonai</option>
+<option value="KER">KER - Keramos</option>
+<option value="KHA">KHA - Khalkis</option>
+<option value="KHI">KHI - Khios</option>
+<option value="KKY">KKY - Korkyra</option>
+<option value="KLN">KLN - Kleonai</option>
+<option value="KLT">KLT - Kleitor</option>
+<option value="KMN">KMN - Kamarina</option>
+<option value="KMR">KMR - Kamiros</option>
+<option value="KOL">KOL - Kolophon</option>
+<option value="KPD">KPD - Kappadokia</option>
+<option value="KPS">KPS - Kyparissia</option>
+<option value="KRE">KRE - Unknown city in Crete</option>
+<option value="KRN">KRN - Krannon</option>
+<option value="KRS">KRS - Karystos</option>
+<option value="KRT">KRT - Kroton</option>
+<option value="KTH">KTH - Korinth</option>
+<option value="KYD">KYD - Kydonia</option>
+<option value="KYM">KYM - Kyme</option>
+<option value="KYP">KYP - Kypro</option>
+<option value="KYR">KYR - Kyrene</option>
+<option value="KYZ">KYZ - Kyzikos</option>
+<option value="KZM">KZM - Klazomenai</option>
+<option value="LAK">LAK - Lakonia (Akrion)</option>
+<option value="LAR">LAR - Larisa</option>
+<option value="LDL">LDL - Laodikeia on the Lykos</option>
+<option value="LEP">LEP - Lepreon</option>
+<option value="LIN">LIN - Lindos</option>
+<option value="LOK">LOK - Unknown city in Lokria</option>
+<option value="MAI">MAI - Mainalos</option>
+<option value="MAK">MAK - Macedonia</option>
+<option value="MAN">MAN - Manteneia</option>
+<option value="MEG">MEG - Megara</option>
+<option value="MEL">MEL - Melos</option>
+<option value="MES">MES - Messene</option>
+<option value="MGP">MGP - Megalopolis</option>
+<option value="MIL">MIL - Miletus</option>
+<option value="MNM">MNM - Magnesia on the Maiandros</option>
+<option value="MRN">MRN - Maroneia</option>
+<option value="MTH">MTH - Methydria</option>
+<option value="MTL">MTL - Mytilene</option>
+<option value="MYL">MYL - Mylasa</option>
+<option value="MYR">MYR - Myra</option>
+<option value="NAX">NAX - Naxos</option>
+<option value="NEA">NEA - Neapolis</option>
+<option value="NKT">NKT - Naukratis</option>
+<option value="NYS">NYS - Nysa</option>
+<option value="OIN">OIN - Oinoanda</option>
+<option value="OPS">OPS - Opous</option>
+<option value="ORK">ORK - Orkhomenos</option>
+<option value="ORS">ORS - Orestheia</option>
+<option value="OXY">OXY - Oxyrhynchos</option>
+<option value="PAT">PAT - Patrai</option>
+<option value="PEL">PEL - Pellene</option>
+<option value="PEP">PEP - Peparethos</option>
+<option value="PES">PES - Pessinous</option>
+<option value="PET">PET - Petra</option>
+<option value="PGL">PGL - Phigaleia</option>
+<option value="PGM">PGM - Pergamon</option>
+<option value="PHA">PHA - Pharsalos</option>
+<option value="PHN">PHN - Phoenicia</option>
+<option value="PHP">PHP - Philippoi</option>
+<option value="PLD">PLD - Philadelphia</option>
+<option value="POS">POS - Poseidonia</option>
+<option value="PRH">PRH - Parrhasia</option>
+<option value="PSA">PSA - Pisa</option>
+<option value="RHD">RHD - Rhodes</option>
+<option value="ROM">ROM - Roma</option>
+<option value="SAL">SAL - Salamis</option>
+<option value="SAR">SAR - Sardis</option>
+<option value="SID">SID - Sidon</option>
+<option value="SIK">SIK - Sikyon</option>
+<option value="SIN">SIN - Sinope</option>
+<option value="SIR">SIR - Siracusa</option>
+<option value="SKO">SKO - Skotoussa</option>
+<option value="SKS">SKS - Kos</option>
+<option value="SLT">SLT - Seleukeia on the Tigris</option>
+<option value="SMS">SMS - Samos</option>
+<option value="SMY">SMY - Smyrna</option>
+<option value="SPA">SPA - Sparta</option>
+<option value="SRA">SRA - Syria (Antocheia)</option>
+<option value="STR">STR - Stratonikeia</option>
+<option value="STY">STY - Stymphalia</option>
+<option value="SYB">SYB - Sybaris</option>
+<option value="TAR">TAR - Taranto</option>
+<option value="TEG">TEG - Tegea</option>
+<option value="TEL">TEL - Telmessos</option>
+<option value="TER">TER - Terina</option>
+<option value="THB">THB - Thebes</option>
+<option value="THL">THL - Thessaly</option>
+<option value="THP">THP - Thespiai</option>
+<option value="THR">THR - Thourioi</option>
+<option value="THS">THS - Thasos</option>
+<option value="THY">THY - Thyateira</option>
+<option value="TIR">TIR - Tiryns</option>
+<option value="TLO">TLO - Tlos</option>
+<option value="TMN">TMN - Tauromenion</option>
+<option value="TND">TND - Tenedos</option>
+<option value="TNG">TNG - Tanagra</option>
+<option value="TNS">TNS - Tenos</option>
+<option value="TPH">TPH - Thelphoussa</option>
+<option value="TRA">TRA - Tralles</option>
+<option value="TRO">TRO - Troy</option>
+<option value="TRS">TRS - Tarsos</option>
+<option value="TRT">TRT - Tritaia</option>
+<option value="TRZ">TRZ - Troizen</option>
+<option value="TYA">TYA - Tyana</option>
+<option value="XAN">XAN - Xanthos</option>
+<option value="ZAK">ZAK - Zakynthos</option></select>
+<select name="edition_id" id="edition_select" class="form-control"><option value="">In Games</option><optgroup label="Olympic Games (Summer)"><option value="1">1896</option>
+<option value="2">1900</option>
+<option value="3">1904</option>
+<option value="5">1908</option>
+<option value="6">1912</option>
+<option value="7">1920</option>
+<option value="8">1924</option>
+<option value="9">1928</option>
+<option value="10">1932</option>
+<option value="11">1936</option>
+<option value="12">1948</option>
+<option value="13">1952</option>
+<option value="14">1956</option>
+<option value="15">1960</option>
+<option value="16">1964</option>
+<option value="17">1968</option>
+<option value="18">1972</option>
+<option value="19">1976</option>
+<option value="20">1980</option>
+<option value="21">1984</option>
+<option value="22">1988</option>
+<option value="23">1992</option>
+<option value="24">1996</option>
+<option value="25">2000</option>
+<option value="26">2004</option>
+<option value="53">2008</option>
+<option value="54">2012</option>
+<option value="59">2016</option>
+<option value="61">2020</option></optgroup><optgroup label="Olympic Games (Winter)"><option value="29">1924</option>
+<option value="30">1928</option>
+<option value="31">1932</option>
+<option value="32">1936</option>
+<option value="33">1948</option>
+<option value="34">1952</option>
+<option value="35">1956</option>
+<option value="36">1960</option>
+<option value="37">1964</option>
+<option value="38">1968</option>
+<option value="39">1972</option>
+<option value="40">1976</option>
+<option value="41">1980</option>
+<option value="42">1984</option>
+<option value="43">1988</option>
+<option value="44">1992</option>
+<option value="45">1994</option>
+<option value="46">1998</option>
+<option value="47">2002</option>
+<option value="49">2006</option>
+<option value="57">2010</option>
+<option value="58">2014</option>
+<option value="60">2018</option>
+<option value="62">2022</option></optgroup><optgroup label="Olympic Games (Equestrian)"><option value="48">1956</option></optgroup><optgroup label="Intercalated Games (Summer)"><option value="4">1906</option></optgroup><optgroup label="Youth Olympic Games (Summer)"><option value="65">2010</option>
+<option value="67">2014</option>
+<option value="69">2018</option></optgroup><optgroup label="Youth Olympic Games (Winter)"><option value="66">2012</option>
+<option value="68">2016</option>
+<option value="70">2020</option></optgroup></select>
+<select name="participation_type" id="participation_type" class="form-control"><option value="olympic,yog,intercalated,forerunner,non-starter,non-olympic,ancient">Any type</option>
+<option selected="selected" value="olympic,yog,intercalated,forerunner,ancient">Medal events</option>
+<option value="non-olympic">Non-medal events</option>
+<option value="non-starter">Non-starters</option>
+<option value="referee">Referees</option>
+<option value="coach">Coaches</option>
+<option value="other">Other</option></select>
+</p>
+</form>
+<script>
+  jQuery('#filter').change(
+      function() {
+          jQuery.ajax({
+                  beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                  data: $('#filter').serialize(),
+                  success:function(request){ jQuery('#relations').html(request);},
+                  type: 'post',
+                  url:'/family_relations/index_data'
+              })
+      });
+</script>
+<div id='relations'>
+
+</div>
+
+</div>
+</body>
+<footer class='footer'>
+<br>
+<div class='panel panel-info'>
+<div class='panel-heading'>
+<h3 class='panel-title'>
+<span class='glyphicon glyphicon-info-sign'></span>
+Did you know?
+</h3>
+</div>
+<div class='panel-body'>
+<p>Through 1956, all Olympic field hockey gold medals were won by either Great Britain or India. They had never played each other until the 1948 Olympics, when India beat the hosts 4-0.</p>
+
+
+</div>
+</div>
+<div class='container'>
+<p>
+<a href="/users/sign_in">Login</a>
+|
+<a href="/statistics/olympedia">Statistics</a>
+|
+<a href="/static/about">About</a>
+|
+<a href="/static/faq">FAQ</a>
+|
+<a href="/feedbacks/new">Feedback</a>
+</p>
+<p>
+&copy; <a href="/static/about">OlyMADMen</a> 2006 — 2023
+</p>
+</div>
+</footer>
+
+<script src="/assets/lightbox.min-40fdcc195c5982250c8901f2c160e15342941a311faf6372c04117c0d9c44bc7.js"></script>
+<script>
+  $('.footnote').tooltip();
+</script>
+</html>

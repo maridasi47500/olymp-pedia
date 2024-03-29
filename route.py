@@ -12,6 +12,7 @@ from stuff import Stuff
 from group_stuff import Group_stuff
 from hack import Hack
 from gossip import Gossip
+from myrelationship import Myrelationship
 
 
 from mypic import Pic
@@ -33,6 +34,7 @@ class Route():
         self.dbLieu=Place()
         self.dbStuff=Stuff()
         self.dbEvent=Event()
+        self.dbMyrelation=Myrelationship()
         self.dbGroupStuff=Group_stuff()
         self.dbPeriode=Periode()
         self.dbPersonne=Person()
@@ -145,6 +147,15 @@ class Route():
         x=self.dbRumeur.create(myparam)
         if x:
           self.set_notice("votre rumeur a été ajoutée")
+        else:
+          self.set_code422(True)
+        return self.render_some_json("welcome/redirect.json")
+    def nouvellemyrelation(self,search):
+        myparam=self.get_post_data()(params=("relation1_id","relation2_id"))
+        self.render_figure.set_param("redirect","/")
+        x=self.dbMyrelation.create(myparam)
+        if x:
+          self.set_notice("votre relation a été ajoutée")
         else:
           self.set_code422(True)
         return self.render_some_json("welcome/redirect.json")
@@ -295,6 +306,9 @@ class Route():
     def ajoutergroupstuff(self,search):
 
         return self.render_figure.render_figure("ajouter/group_stuff.html")
+    def ajoutermyrelation(self,search):
+
+        return self.render_figure.render_figure("ajouter/myrelation.html")
     def ajouterperiode(self,search):
 
         return self.render_figure.render_figure("ajouter/periode.html")
@@ -409,6 +423,8 @@ class Route():
             '^/getmoussaillon$': self.getmoussaillon,
             '^/nouvelleperiode$': self.nouvelleperiode,
             '^/ajouterperiode$': self.ajouterperiode,
+            '^/nouvellemyrelationship$': self.nouvellemyrelation,
+            '^/ajoutermyrelationship$': self.ajoutermyrelation,
             '^/nouvellepersonne$': self.nouvellepersonne,
             '^/ajouterpersonne$': self.ajouterpersonne,
             '^/new$': self.nouveau,
