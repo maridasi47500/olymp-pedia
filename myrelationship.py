@@ -16,7 +16,7 @@ class Myrelationship(Model):
         self.con.commit()
         #self.con.close()
     def getall(self):
-        self.cur.execute("select * from myrelationship")
+        self.cur.execute("select myrel.*,r2.name as relation2, r1.name as relation1 from myrelationship myrel left join relationship r1 on r1.id = myrel.relation1_id left join relationship r2 on r2.id = myrel.relation2_id")
 
         row=self.cur.fetchall()
         return row
